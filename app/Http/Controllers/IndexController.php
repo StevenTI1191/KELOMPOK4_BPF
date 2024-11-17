@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class PasienController extends Controller
+class IndexController extends Controller
 {
     /**
      * Display a listing of the resource.
