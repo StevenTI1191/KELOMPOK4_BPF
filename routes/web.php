@@ -9,3 +9,6 @@ Route::get('/', function () {
 
 route::get('andika',[App\Http\Controllers\IndexController::class,'andika']);
 route::get('steven',[App\Http\Controllers\IndexController::class,'steven']);
+route::get('fitra', [App\Http\Controllers\IndexController::class,'fitra']);
+route::get('mifta', [App\Http\Controllers\IndexController::class,'mifta']);
+

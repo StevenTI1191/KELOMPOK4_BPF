@@ -23,5 +23,10 @@ class IndexController extends Controller
     {
         return view('steven');
     }
-
+    public function fitra(){
+        return view ('fitra');
+    }
+    public function mifta(){
+        return view ('mifta');
+    }
 }
