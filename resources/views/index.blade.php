@@ -48,10 +48,10 @@
         <h1>Nama Anggota Kelompok</h1>
         <div class="info">
             <p><span>1.</span> Andika Syuhada /  <a href="andika">Detail </a></p>
-            <p><span>2.</span> Dhea Amanda Reyhan / <a href="dhea">Detail  </p>
-            <p><span>3.</span> Mifta Rahma Alisha / <a href="mifta">Detail  </p>
-            <p><span>4.</span> M.Al Fitra / <a href="alfitra">Detail  </p>
-            <p><span>5.</span> Steven / <a href="steven">Detail </p>
+            <p><span>2.</span> Dhea Amanda Reyhan / <a href="dhea">Detail </a> </p>
+            <p><span>3.</span> Mifta Rahma Alisha / <a href="mifta">Detail  </a> </p>
+            <p><span>4.</span> M.Al Fitra / <a href="alfitra">Detail </a> </p>
+            <p><span>5.</span> Steven / <a href="steven">Detail  </a> </p>
             
         </div>
     </div>
