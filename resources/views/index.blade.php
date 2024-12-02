@@ -9,8 +9,8 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/trans_bg.png" rel="trans_bg.png">
+  <link href="assets/img/trans_bg.png" rel="trans_bg.png">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -45,7 +45,8 @@
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">UpConstruction</h1> <span>.</span>
+        <link href="assets/img/trans_bg.png" rel="trans_bg.png">
+        <h1 class="sitename">Politeknik Caltex Riau</h1> <span>.</span>
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -89,9 +90,10 @@
         <div class="container">
           <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-6 text-center">
-              <h2>Welcome to UpConstruction</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              <a href="#get-started" class="btn-get-started">Get Started</a>
+              <h2>Selamat Datang di Sistem Request Kebutuhan Buku</h2>
+              <p>Ini adalah web resmi Politeknik Caltex Riau untuk para civitas Politeknik Caltex Riau
+                merequest kebutuhan buku atau modul</p>
+              <a href="#get-started" class="btn-get-started">Mulai Pencarian</a>
             </div>
           </div>
         </div>
@@ -100,23 +102,23 @@
       <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
 
         <div class="carousel-item">
-          <img src="assets/img/hero-carousel/hero-carousel-1.jpg" alt="">
+          <img src="assets/img/landingPage/perpustakaan1.jpg" alt="">
         </div>
 
         <div class="carousel-item active">
-          <img src="assets/img/hero-carousel/hero-carousel-2.jpg" alt="">
+          <img src="assets/img/landingPage/perpustakaan2.jpg" alt="">
         </div>
 
         <div class="carousel-item">
-          <img src="assets/img/hero-carousel/hero-carousel-3.jpg" alt="">
+          <img src="assets/img/landingPage/perpustakaan3.jpg" alt="">
         </div>
 
         <div class="carousel-item">
-          <img src="assets/img/hero-carousel/hero-carousel-4.jpg" alt="">
+          <img src="assets/img/landingPage/perpustakaan4.jpeg" alt="">
         </div>
 
         <div class="carousel-item">
-          <img src="assets/img/hero-carousel/hero-carousel-5.jpg" alt="">
+          <img src="assets/img/landingPage/perpustakaan5.jpg" alt="">
         </div>
 
         <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
