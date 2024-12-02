@@ -46,7 +46,7 @@
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <link href="assets/img/trans_bg.png" rel="trans_bg.png">
-        <h1 class="sitename">Politeknik Caltex Riau</h1> <span>.</span>
+        <img src="assets/img/logoPCRValid.png" width="300px">
       </a>
 
       <nav id="navmenu" class="navmenu">
