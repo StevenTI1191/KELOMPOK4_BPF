@@ -15,18 +15,5 @@ class IndexController extends Controller
         return view('index');
     }
 
-    public function andika()
-    {
-        return view('andika');
-    }
-    public function steven()
-    {
-        return view('steven');
-    }
-    public function fitra(){
-        return view ('fitra');
-    }
-    public function mifta(){
-        return view ('mifta');
-    }
+    
 }
