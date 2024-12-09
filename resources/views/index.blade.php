@@ -535,8 +535,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Projects</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>Rekomendasi</h2>
+        <p>Buku-buku yang disarankan untuk dibaca</p>
       </div><!-- End Section Title -->
 
       <div class="container">
