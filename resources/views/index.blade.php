@@ -142,31 +142,34 @@
 
           <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
             <div class="content">
-              <h3>Minus hic non reiciendis ea possimus at quia.</h3>
-              <p>Rem id rerum. Debitis deserunt quidem delectus expedita ducimus dolor. Aut iusto ipsa. Eos ipsum nobis ipsa soluta itaque perspiciatis fuga ipsum perspiciatis. Eum amet fugiat totam nisi possimus ut delectus dicta.
+              <h3>Perpustakaan Digital PCR</h3>
+              <p>
+                Perpustakaan Digital PCR adalah platform online yang menyediakan akses mudah ke koleksi buku digital, e-book, dan sumber daya edukasi lainnya. 
+                Pengguna dapat mencari, meminjam, dan mengajukan permintaan buku, serta mendapatkan rekomendasi buku yang sesuai dengan minat atau mood mereka. 
               </p>
-              <p>Aliquam velit deserunt autem. Inventore et saepe. Tenetur suscipit eligendi labore culpa eos. Deserunt porro magni qui necessitatibus dolorem at animi cupiditate.</p>
+              <p>Dengan fitur pencarian cerdas, permintaan buku, serta rekomendasi personal, kami berkomitmen untuk mendukung pembelajaran dan pengembangan diri.
+                 Akses ilmu tanpa batas, karena membaca adalah kunci untuk membuka dunia yang lebih luas!               <p>
             </div>
           </div>
 
           <div class="col-lg-5" data-aos="zoom-out" data-aos-delay="200">
             <form action="forms/quote.php" method="post" class="php-email-form">
-              <h3>Get a quote</h3>
-              <p>Vel nobis odio laboriosam et hic voluptatem. Inventore vitae totam. Rerum repellendus enim linead sero park flows.</p>
+              <h3>Book Wish List</h3>
+              <p>Tambahkan buku yang kamu inginkan ke daftar, dan biarkan kami membantu mewujudkan permintaan bacaanmu! 📚✨ </p>
               <div class="row gy-3">
 
                 <div class="col-12">
-                  <input type="text" name="name" class="form-control" placeholder="Name" required="">
+                  <input type="text" name="name" class="form-control" placeholder="Apa yang kamu rasakan hari ini?" required="">
                 </div>
 
                 
 
                 <div class="col-12">
-                  <input type="text" class="form-control" name="phone" placeholder="Phone" required="">
+                  <input type="text" class="form-control" name="phone" placeholder="Pilih genre buku seperti pilih Zodiakmu !" required="">
                 </div>
 
                 <div class="col-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                  <textarea class="form-control" name="message" rows="6" placeholder="Buku apa yang ingin kamu baca? " required=""></textarea>
                 </div>
 
                 <div class="col-12 text-center">
@@ -174,7 +177,7 @@
                   <div class="error-message"></div>
                   <div class="sent-message">Your quote request has been sent successfully. Thank you!</div>
 
-                  <button type="submit">Get a quote</button>
+                  <button type="submit">Submit</button>
                 </div>
 
               </div>
