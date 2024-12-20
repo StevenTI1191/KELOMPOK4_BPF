@@ -174,7 +174,7 @@
 
                 <div class="col-12 text-center">
                   <div class="loading">Loading</div>
-                  <div class="error-message"></div>
+               
                   <div class="sent-message">Your quote request has been sent successfully. Thank you!</div>
 
                   <button type="submit">Submit</button>
@@ -295,8 +295,8 @@
               <div class="icon">
                 <i class="fa-solid fa-mountain-city"></i>
               </div>
-              <h3>Nesciunt Mete</h3>
-              <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
+              <h3>Request Buku dan Modul</h3>
+              <p>Dosen dan mahasiswa dapat mengajukan permintaan buku atau modul yang tidak tersedia di perpustakaan melalui form online, yang akan diproses oleh petugas.</p>
               <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
@@ -306,8 +306,8 @@
               <div class="icon">
                 <i class="fa-solid fa-arrow-up-from-ground-water"></i>
               </div>
-              <h3>Eosle Commodi</h3>
-              <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
+              <h3>Peminjaman Buku dan Modul</h3>
+              <p>Buku dan modul, baik fisik maupun digital, dapat dipinjam langsung atau melalui platform online dengan pengambilan terjadwal.</p>
               <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
@@ -317,8 +317,8 @@
               <div class="icon">
                 <i class="fa-solid fa-compass-drafting"></i>
               </div>
-              <h3>Ledo Markt</h3>
-              <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
+              <h3>Pengajuan Modul untuk Mata Kuliah</h3>
+              <p>Dosen dapat mengajukan permintaan modul atau bahan ajar khusus untuk mata kuliah yang diajarkan, tersedia dalam format digital atau fisik.</p>
               <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
@@ -328,8 +328,8 @@
               <div class="icon">
                 <i class="fa-solid fa-trowel-bricks"></i>
               </div>
-              <h3>Asperiores Commodit</h3>
-              <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
+              <h3>Rekomendasi Berdasarkan Mata Kuliah</h3>
+              <p>Sistem memberikan rekomendasi buku dan modul relevan untuk mata kuliah yang dipilih oleh dosen atau mahasiswa</p>
               <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
@@ -339,8 +339,8 @@
               <div class="icon">
                 <i class="fa-solid fa-helmet-safety"></i>
               </div>
-              <h3>Velit Doloremque</h3>
-              <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
+              <h3>Rekomendasi Berdasarkan Mata Kuliah</h3>
+              <p>Akses ke berbagai e-book, jurnal, dan materi digital tersedia untuk mendukung kebutuhan akademik dosen dan mahasiswa.</p>
               <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
@@ -351,7 +351,7 @@
                 <i class="fa-solid fa-arrow-up-from-ground-water"></i>
               </div>
               <h3>Dolori Architecto</h3>
-              <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
+              <p>Sistem mengirimkan pengingat pengembalian buku/modul dan opsi perpanjangan peminjaman secara otomatis.</p>
               <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
