@@ -73,7 +73,7 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="{{ route('login') }}">Login</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -93,7 +93,7 @@
               <h2>Selamat Datang di Sistem Request Kebutuhan Buku</h2>
               <p>Ini adalah web resmi Politeknik Caltex Riau untuk para civitas Politeknik Caltex Riau
                 merequest kebutuhan buku atau modul</p>
-              <a href="#get-started" class="btn-get-started">Mulai Pencarian</a>
+              <a href="#Rekomendasi" class="btn-get-started">Mulai Pencarian</a>
             </div>
           </div>
         </div>
@@ -364,7 +364,7 @@
 
   
     <!-- Projects Section -->
-    <section id="projects" class="projects section">
+    <section id="Rekomendasi" class="projects section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
