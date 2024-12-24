@@ -8,7 +8,7 @@ class adminController extends Controller
 {
     public function index()
     {
-        return view('index');
+        return view('admin.dashboard');
     }
 
     function test(){}
