@@ -217,15 +217,14 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama Peminjam</th>
+                                            <th>Nama Pengaju</th>
                                             <th>NIM</th>
                                             <th>Judul Buku/Modul</th>
                                             <th>Tgl Mulai</th>
                                             <th>Tgl Selesai</th>
-                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
+                                    <!-- <tfoot>
                                         <tr>
                                             <th>No</th>
                                             <th>Nama Peminjam</th>
@@ -235,7 +234,7 @@
                                             <th>Tgl Selesai</th>
                                             <th>Aksi</th>
                                         </tr>
-                                    </tfoot>
+                                    </tfoot> -->
                                     <tbody>
                                         <tr>
                                             <td>1</td>
@@ -244,10 +243,6 @@
                                             <td>Panduan Belajar Python</td>
                                             <td>2024-01-10</td>
                                             <td>2024-01-20</td>
-                                            <td>
-                                                <button class="btn btn-success btn-sm">Terima</button>
-                                                <button class="btn btn-danger btn-sm">Tolak</button>
-                                            </td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
@@ -256,10 +251,6 @@
                                             <td>Mastering Laravel</td>
                                             <td>2024-02-01</td>
                                             <td>2024-02-11</td>
-                                            <td>
-                                                <button class="btn btn-success btn-sm">Terima</button>
-                                                <button class="btn btn-danger btn-sm">Tolak</button>
-                                            </td>
                                         </tr>
                                         <tr>
                                             <td>3</td>
@@ -268,10 +259,6 @@
                                             <td>Database MySQL</td>
                                             <td>2024-03-05</td>
                                             <td>2024-03-15</td>
-                                            <td>
-                                                <button class="btn btn-success btn-sm">Terima</button>
-                                                <button class="btn btn-danger btn-sm">Tolak</button>
-                                            </td>
                                         </tr>
                                         <tr>
                                             <td>4</td>
@@ -280,10 +267,6 @@
                                             <td>Android Programming</td>
                                             <td>2024-01-12</td>
                                             <td>2024-01-22</td>
-                                            <td>
-                                                <button class="btn btn-success btn-sm">Terima</button>
-                                                <button class="btn btn-danger btn-sm">Tolak</button>
-                                            </td>
                                         </tr>
                                         <tr>
                                             <td>5</td>
@@ -292,10 +275,6 @@
                                             <td>HTML & CSS</td>
                                             <td>2024-02-05</td>
                                             <td>2024-02-15</td>
-                                            <td>
-                                                <button class="btn btn-success btn-sm">Terima</button>
-                                                <button class="btn btn-danger btn-sm">Tolak</button>
-                                            </td>
                                         </tr>
                                         <tr>
                                             <td>6</td>
@@ -304,10 +283,6 @@
                                             <td>JavaScript Basics</td>
                                             <td>2024-03-10</td>
                                             <td>2024-03-20</td>
-                                            <td>
-                                                <button class="btn btn-success btn-sm">Terima</button>
-                                                <button class="btn btn-danger btn-sm">Tolak</button>
-                                            </td>
                                         </tr>
                                         <tr>
                                             <td>7</td>
@@ -316,10 +291,6 @@
                                             <td>React.js Guide</td>
                                             <td>2024-04-01</td>
                                             <td>2024-04-11</td>
-                                            <td>
-                                                <button class="btn btn-success btn-sm">Terima</button>
-                                                <button class="btn btn-danger btn-sm">Tolak</button>
-                                            </td>
                                         </tr>
                                         <tr>
                                             <td>8</td>
@@ -328,10 +299,6 @@
                                             <td>Vue.js for Beginners</td>
                                             <td>2024-01-15</td>
                                             <td>2024-01-25</td>
-                                            <td>
-                                                <button class="btn btn-success btn-sm">Terima</button>
-                                                <button class="btn btn-danger btn-sm">Tolak</button>
-                                            </td>
                                         </tr>
                                         <tr>
                                             <td>9</td>
@@ -340,10 +307,6 @@
                                             <td>Panduan Java</td>
                                             <td>2024-02-02</td>
                                             <td>2024-02-12</td>
-                                            <td>
-                                                <button class="btn btn-success btn-sm">Terima</button>
-                                                <button class="btn btn-danger btn-sm">Tolak</button>
-                                            </td>
                                         </tr>
                                         <tr>
                                             <td>10</td>
@@ -352,10 +315,6 @@
                                             <td>Kotlin for Android</td>
                                             <td>2024-03-08</td>
                                             <td>2024-03-18</td>
-                                            <td>
-                                                <button class="btn btn-success btn-sm">Terima</button>
-                                                <button class="btn btn-danger btn-sm">Tolak</button>
-                                            </td>
                                         </tr>
                                         <!-- Tambahkan baris lain dengan pola yang sama -->
                                     </tbody>

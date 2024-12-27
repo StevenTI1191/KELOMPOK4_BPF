@@ -216,15 +216,15 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama Pengaju</th>
+                                            <th>Nama Peminjam</th>
                                             <th>NIM/NIP</th>
-                                            <th>Tanggal Peminjaman</th>
+                                            <th>Tanggal Pengembalian</th>
                                             <th>Jenis</th>
                                             <th>Judul Buku</th>
                                             <th>Status</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
+                                    <!-- <tfoot>
                                         <tr>
                                             <th>No</th>
                                             <th>Nama Peminjam</th>
@@ -234,7 +234,7 @@
                                             <th>Judul Buku</th>
                                             <th>Aksi</th>
                                         </tr>
-                                    </tfoot>
+                                    </tfoot> -->
                                     <tbody>
                                         <tr>
                                             <td>1</td>
