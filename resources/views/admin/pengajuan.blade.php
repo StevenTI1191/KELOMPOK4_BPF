@@ -225,7 +225,7 @@
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
+                                    <!-- <tfoot>
                                         <tr>
                                             <th>No</th>
                                             <th>Nama Peminjam</th>
@@ -235,7 +235,7 @@
                                             <th>Judul Buku</th>
                                             <th>Aksi</th>
                                         </tr>
-                                    </tfoot>
+                                    </tfoot> -->
                                     <tbody>
                                         <tr>
                                             <td>1</td>
