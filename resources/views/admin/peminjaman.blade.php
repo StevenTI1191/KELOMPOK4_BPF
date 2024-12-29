@@ -236,7 +236,7 @@
                                             <th>Aksi</th>
                                         </tr>
                                     </tfoot> -->
-                                    <tbody>
+                                    <!-- <tbody>
                                         <tr>
                                             <td>1</td>
                                             <td>Andi Saputra</td>
@@ -357,7 +357,21 @@
                                                 <button class="btn btn-danger btn-sm">Tolak</button>
                                             </td>
                                         </tr>
-                                        <!-- Tambahkan 10 baris lagi sesuai pola yang sama -->
+                                    </tbody> -->
+                                    <tbody>
+                                    @foreach ($peminjam as $index => $item)
+                                            <tr>
+                                                <td>{{ $index + 1 }}</td>
+                                                <td>{{ $item['nama_peminjam'] }}</td>
+                                                <td>{{ $item['nim'] }}</td>
+                                                <td>{{ $item['tgl_pinjam'] }}</td>
+                                                <td>{{ $item['jenis'] }}</td>
+                                                <td>{{ $item['judul_buku'] }}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                                {!! $peminjam->links()!!}
                                     </tbody>
                                 </table>
                             </div>
@@ -370,7 +384,6 @@
 
                 </div>
                 <!-- /.container-fluid -->
-
             </div>
             <!-- End of Main Content -->
 
