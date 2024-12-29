@@ -183,8 +183,7 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal"
-                                    data-target="#logoutModal">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -217,21 +216,20 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Judul Buku</th>
-                                            <th>Judul Modul</th>
+                                            <th>Judul Buku/Modul</th>
                                             <th>Status</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
+                                    <!-- <tfoot>
                                         <tr>
                                             <th>No</th>
                                             <th>Judul Buku</th>
                                             <th>Judul Modul</th>
                                             <th>Status</th>
                                         </tr>
-                                    </tfoot>
+                                    </tfoot> -->
                                     <tbody>
-                                        <tr>
+                                        <!-- <tr>
                                             <td>1</td>
                                             <td>Panduan Belajar Python</td>
                                             <td>Dasar Pemrograman Python</td>
@@ -350,17 +348,20 @@
                                             <td>SEO untuk Pemula</td>
                                             <td>Optimasi Website</td>
                                             <td>Tersedia</td>
-                                        </tr>
+                                        </tr> -->
+                                        @foreach ($buku as $index => $item)
+                                            <tr>
+                                                <td>{{ $index + 1 }}</td>
+                                                <td>{{ $item['judul_buku'] }}</td>
+                                                <td>{{ $item['Status'] }}</td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
+                                {!! $buku->links()!!}
                             </div>
                         </div>
                     </div>
-
-
-
-
-
                 </div>
                 <!-- /.container-fluid -->
 

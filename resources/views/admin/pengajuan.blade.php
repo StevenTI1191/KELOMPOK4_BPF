@@ -239,7 +239,7 @@
                                         </tr>
                                     </tfoot> -->
                                     <tbody>
-                                        <tr>
+                                        <!-- <tr>
                                             <td>1</td>
                                             <td>Andi Saputra</td>
                                             <td>12345678</td>
@@ -358,10 +358,21 @@
                                                 <button class="btn btn-success btn-sm">Terima</button>
                                                 <button class="btn btn-danger btn-sm">Tolak</button>
                                             </td>
-                                        </tr>
+                                        </tr> -->
                                         <!-- Tambahkan 10 baris lagi sesuai pola yang sama -->
+                                        @foreach ($pengaju as $index => $item)
+                                            <tr>
+                                                <td>{{ $index + 1 }}</td>
+                                                <td>{{ $item['nama_pengaju'] }}</td>
+                                                <td>{{ $item['nim'] }}</td>
+                                                <td>{{ $item['tgl_pengajuan'] }}</td>
+                                                <td>{{ $item['jenis'] }}</td>
+                                                <td>{{ $item['judul_buku'] }}</td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
+                                {!! $pengaju->links()!!}
                             </div>
                         </div>
                     </div>
