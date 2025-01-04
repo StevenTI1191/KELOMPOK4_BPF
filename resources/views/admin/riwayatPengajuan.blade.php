@@ -220,8 +220,7 @@
                                             <th>Nama Pengaju</th>
                                             <th>NIM</th>
                                             <th>Judul Buku/Modul</th>
-                                            <th>Tgl Mulai</th>
-                                            <th>Tgl Selesai</th>
+                                            <th>Status</th>
                                         </tr>
                                     </thead>
                                     <!-- <tfoot>
@@ -236,7 +235,7 @@
                                         </tr>
                                     </tfoot> -->
                                     <tbody>
-                                        <tr>
+                                        <!-- <tr>
                                             <td>1</td>
                                             <td>Andi Saputra</td>
                                             <td>12345678</td>
@@ -315,7 +314,7 @@
                                             <td>Kotlin for Android</td>
                                             <td>2024-03-08</td>
                                             <td>2024-03-18</td>
-                                        </tr>
+                                        </tr> -->
                                         <!-- Tambahkan baris lain dengan pola yang sama -->
                                     </tbody>
                                 </table>
