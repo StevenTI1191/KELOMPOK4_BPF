@@ -367,6 +367,10 @@
                                                 <td>{{ $item['tgl_pinjam'] }}</td>
                                                 <td>{{ $item['jenis'] }}</td>
                                                 <td>{{ $item['judul_buku'] }}</td>
+                                                <td>
+                                                <button class="btn btn-success btn-sm">Setuju</button>
+                                                <button class="btn btn-danger btn-sm">Tolak</button>
+                                                </td>
                                             </tr>
                                         @endforeach
                                     </tbody>

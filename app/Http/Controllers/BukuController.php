@@ -22,7 +22,7 @@ class BukuController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.buku_create');
     }
 
     /**
@@ -30,7 +30,14 @@ class BukuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $requestData = $request->validate([
+            'judul_buku' => 'required|min:3',
+            'status' => 'required|in:tersedia,kosong',
+        ]);
+        $buku = new \App\Models\Buku(); //membuat objek kosong di variabel model
+        $buku->fill($requestData); //mengisi var model dengan data yang sudah divalidasi requestData
+        $buku->save();
+        return back();
     }
 
     /**
