@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Peminjam;
 use Illuminate\Http\Request;
 
-class PengajuController extends Controller
+class PengembaliController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data['pengaju'] = \App\Models\Pengaju::latest()->paginate(10);
-        return view('admin.pengajuan', $data);
+        $data['pengembali'] = \App\Models\Peminjam::latest()->paginate(10);
+        return view('admin.pengembalian', $data);
     }
 
     /**
@@ -50,9 +51,23 @@ class PengajuController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $pengembali = Peminjam::findOrFail($id);
+
+        // Update status dan tanggal pengembalian
+        if ($request->has('status') && $request->has('tgl_pengembali')) {
+            $pengembali->status = $request->status;
+            $pengembali->tgl_pengembali = $request->tgl_pengembali;
+            $pengembali->save();
+
+            return response()->json(['message' => 'Status dan Tanggal Pengembalian updated successfully']);
+        }
+
+        // Jika ada field lain yang diupdate, tambahkan logika di sini
+        // ...
+
+        return redirect()->route('pengembali.index')->with('success', 'Data updated successfully');
     }
 
     /**
