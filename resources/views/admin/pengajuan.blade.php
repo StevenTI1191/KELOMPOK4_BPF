@@ -1,55 +1,74 @@
-@extends('layouts.app')
+@extends('layouts.NavbarAdmin')
+
 @section('content')
-    <!-- Begin Page Content -->
+
+    <!-- Page Content -->
     <div class="container-fluid">
-
-        <!-- Page Heading -->
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Pengajuan Buku & Modul</h1>
-        </div>
-
-        <!-- Content -->
         <div class="card shadow mb-4">
-            <!-- Card Header - Dropdown -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">List Pengajuan Buku & Modul</h6>
+                <a href="{{ route('pengajuan.create') }}" class="btn btn-primary">
+                    <i class="fa fa-plus-circle"></i> Ajukan
+                </a>
             </div>
-            <!-- Card Body -->
+
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Nama Pengaju</th>
-                                <th>NIM/NIP</th>
+                                <th>Nama Pengajuan</th>
+                                <th>Identitas</th>
                                 <th>Tanggal Pengajuan</th>
                                 <th>Jenis</th>
                                 <th>Judul Buku</th>
-                                <th>Aksi</th>
+                                <th>Status</th> 
+                                <th>Aksi</th>  <!-- Kolom Aksi Ditambahkan -->
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($pengaju as $index => $item)
+                            @foreach ($pengajuan as $index => $item)
                                 <tr>
                                     <td>{{ $index + 1 }}</td>
-                                    <td>{{ $item['nama_pengaju'] }}</td>
-                                    <td>{{ $item['nim'] }}</td>
-                                    <td>{{ $item['tgl_pengajuan'] }}</td>
-                                    <td>{{ $item['jenis'] }}</td>
-                                    <td>{{ $item['judul_buku'] }}</td>
+                                    <td>{{ $item->nama_pengajuan }}</td>
+                                    <td>{{ $item->identitas }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($item->tgl_pengajuan)->format('d-m-Y') }}</td>
+                                    <td>{{ $item->jenis }}</td>
+                                    <td>{{ $item->judul_buku }}</td>
                                     <td>
-                                        <button class="btn btn-success btn-sm">Terima</button>
-                                        <button class="btn btn-danger btn-sm">Tolak</button>
+                                        @if ($item->status == 'terima')
+                                            <span class="badge badge-success">Diterima</span>
+                                        @else
+                                            <span class="badge badge-danger">Ditolak</span>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <form method="POST" action="{{ route('admin.pengajuan.updateStatus', $item->id) }}">
+                                            @csrf
+                                            @method('PATCH')
+                                            <input type="hidden" name="status" value="terima">
+                                            <button type="submit" class="btn btn-success btn-sm">
+                                                <i class="fa fa-check"></i> Terima
+                                            </button>
+                                        </form>
+
+                                        <form method="POST" action="{{ route('admin.pengajuan.updateStatus', $item->id) }}" class="mt-1">
+                                            @csrf
+                                            @method('PATCH')
+                                            <input type="hidden" name="status" value="tolak">
+                                            <button type="submit" class="btn btn-danger btn-sm">
+                                                <i class="fa fa-times"></i> Tolak
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
-                    {!! $pengaju->links() !!}
+                    {!! $pengajuan->links() !!}
                 </div>
             </div>
         </div>
-    </div>
-    <!-- /.container-fluid -->
+    </div> <!-- End of container-fluid -->
 @endsection

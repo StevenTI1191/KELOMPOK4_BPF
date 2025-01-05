@@ -41,7 +41,7 @@
                     </div>
 
                     <div class="text-right">
-                        <a href="{{ route('peminjam.index') }}" class="btn btn-secondary">Batal</a>
+                        <a href="{{ route('admin.peminjaman') }}" class="btn btn-secondary">Batal</a>
                         <button type="submit" class="btn btn-primary">Tambah</button>
                     </div>
                 </form>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.NavbarAdmin')
 @section('content')
     <div class="container-fluid">
         <div class="row mb-4">
@@ -13,7 +13,7 @@
             </div>
             <div class="card-body">
                 <div class="mb-3">
-                    <a href="{{ route('peminjam.create') }}" class="btn btn-success btn-sm">
+                    <a href="{{ route('peminjaman.create') }}" class="btn btn-success btn-sm">
                         <i class="fas fa-plus"></i> Tambah
                     </a>
                 </div>
@@ -40,7 +40,7 @@
                                     <td>{{ $item['jenis'] }}</td>
                                     <td>{{ $item['judul_buku'] }}</td>
                                     <td>
-                                        <a href="{{ route('peminjam.edit', $item['id']) }}" class="btn btn-warning btn-sm">
+                                        <a href="{{ route('peminjaman.edit', $item['id']) }}" class="btn btn-warning btn-sm">
                                             <i class="fas fa-edit"></i> Update
                                         </a>
                                     </td>

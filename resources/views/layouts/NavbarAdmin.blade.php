@@ -52,7 +52,7 @@
         <!-- List Section -->
         <div class="sidebar-heading">List Buku & Modul</div>
         <li class="nav-item">
-            <a class="nav-link" href="pengajuanBuku">
+            <a class="nav-link" href="{{ route('admin.pengajuan') }}">
                 <i class="fas fa-fw fa-book-reader"></i>
                 <span>Pengajuan</span>
             </a>

@@ -10,7 +10,7 @@ class UserPengajuanBuku extends Model
 
     protected $table = 'pengajuan_buku'; // Matches the table name in the database
 
-    protected $fillable = ['user_id', 'nama_pengajuan', 'identitas', 'tgl_pengajuan', 'jenis', 'judul_buku'];
+    protected $fillable = ['user_id', 'nama_pengajuan', 'identitas', 'tgl_pengajuan', 'jenis', 'judul_buku','status'];
 
 
 }

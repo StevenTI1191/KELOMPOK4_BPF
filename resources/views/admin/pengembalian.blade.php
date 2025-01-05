@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.NavbarAdmin')
 @section('content')
     <div class="container-fluid">
         <div class="row mb-4">
@@ -26,7 +26,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($pengembali as $index => $item)
+                            @foreach ($pengembalian as $index => $item)
                                 <tr>
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $item['nama_peminjam'] }}</td>
@@ -54,7 +54,8 @@
                     </table>
                 </div>
                 <div class="d-flex justify-content-between align-items-center mt-3">
-                    {!! $pengembali->links() !!}
+                    {{ $pengembalian->links() }}
+
                 </div>
             </div>
         </div>
@@ -70,7 +71,7 @@
                 var dropdown = $(this);
 
                 $.ajax({
-                    url: '{{ route('pengembali.update', ['pengembali' => ':id']) }}'.replace(':id',
+                    url: '{{ route('pengembalian.update', ['pengembalian' => ':id']) }}'.replace(':id',
                         id),
                     type: 'POST',
                     data: {

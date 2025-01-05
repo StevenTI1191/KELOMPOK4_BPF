@@ -43,7 +43,7 @@
                             value="{{ $peminjam->judul_buku }}" required>
                     </div>
                     <div class="text-right">
-                        <a href="{{ route('peminjam.index') }}" class="btn btn-secondary">Batal</a>
+                        <a href="{{ route('') }}" class="btn btn-secondary">Batal</a>
                         <button type="submit" class="btn btn-primary">Update</button>
                     </div>
                 </form>

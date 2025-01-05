@@ -51,12 +51,12 @@
                     <span>Pengajuan</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('peminjam.index') }}">
+                <a class="nav-link" href="{{ route('admin.peminjaman') }}">
                     <i class="fas fa-fw fa-bookmark"></i>
                     <span>Peminjaman</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('pengembali.index') }}">
+                <a class="nav-link" href="{{ route('admin.pengembalian') }}">
                     <i class="fas fa-fw fa-book-open"></i>
                     <span>Pengembalian</span></a>
             </li>

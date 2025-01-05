@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Peminjam;
+use App\Models\Peminjaman;
 use Illuminate\Http\Request;
 
 class PeminjamController extends Controller
@@ -12,7 +12,7 @@ class PeminjamController extends Controller
      */
     public function index()
     {
-        $peminjam = Peminjam::paginate(10);
+        $peminjam = Peminjaman::paginate(10);
         return view('admin.peminjaman', compact('peminjam'));
     }
 
@@ -39,7 +39,7 @@ class PeminjamController extends Controller
         ]);
 
         // Simpan data ke database
-        Peminjam::create([
+        Peminjaman::create([
             'nama_peminjam' => $validated['nama_peminjam'],
             'nim' => $validated['nim'],
             'tgl_pinjam' => $validated['tgl_pinjam'] ?? null, // Biarkan null jika tidak diisi
@@ -50,7 +50,7 @@ class PeminjamController extends Controller
         ]);
 
         // Redirect ke halaman index dengan pesan sukses
-        return redirect()->route('peminjam.index')->with('success', 'Data peminjaman berhasil ditambahkan.');
+        return redirect()->route('admin.peminjaman')->with('success', 'Data peminjaman berhasil ditambahkan.');
     }
 
     /**
@@ -59,7 +59,7 @@ class PeminjamController extends Controller
     public function show($id)
     {
         try {
-            $peminjam = Peminjam::findOrFail($id);
+            $peminjam = Peminjaman::findOrFail($id);
             return response()->json($peminjam);
         } catch (\Exception $e) {
             return response()->json(['error' => 'Data tidak ditemukan'], 404);
@@ -71,14 +71,14 @@ class PeminjamController extends Controller
      */
     public function edit(string $id)
     {
-        $peminjam = Peminjam::findOrFail($id);
+        $peminjam = Peminjaman::findOrFail($id);
         return view('admin.peminjaman.update', compact('peminjam'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Peminjam $peminjam)
+    public function update(Request $request, Peminjaman $peminjam)
     {
         // Validasi data yang diterima dari form
         $validatedData = $request->validate([
@@ -100,13 +100,13 @@ class PeminjamController extends Controller
         $peminjam->save();
 
         // Redirect ke halaman index dengan pesan sukses
-        return redirect()->route('peminjam.index')->with('success', 'Data peminjaman berhasil diupdate!');
+        return redirect()->route('admin.peminjaman')->with('success', 'Data peminjaman berhasil diupdate!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Peminjam $peminjam)
+    public function destroy(Peminjaman $peminjam)
     {
         //
     }

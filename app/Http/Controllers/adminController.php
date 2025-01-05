@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Peminjam;
+use App\Models\Peminjaman;
+use App\Models\UserPengajuanBuku;
 use Illuminate\Http\Request;
 use App\Models\Buku;
 
@@ -11,7 +12,7 @@ class adminController extends Controller
     public function index()
     {
         $buku = Buku::all();
-        $peminjam = Peminjam::all();
+        $peminjam = Peminjaman::all();
         return view('admin.dashboard');
     }
 
@@ -22,7 +23,19 @@ class adminController extends Controller
 
     public function pengajuan()
     {
-        return view('admin.pengajuan');
+        $pengajuan = UserPengajuanBuku::paginate(10);  // Menggunakan paginate()
+        return view('admin.pengajuan', compact('pengajuan'));
+
+    }
+
+    public function updateStatus(Request $request, $id)
+    {
+        $pengajuan = UserPengajuanBuku::findOrFail($id);
+        $pengajuan->update([
+            'status' => $request->status,
+        ]);
+
+        return redirect()->back()->with('success', 'Status pengajuan berhasil diperbarui.');
     }
 
     public function peminjaman()
@@ -42,7 +55,7 @@ class adminController extends Controller
 
     public function riwayatPeminjaman()
     {
-        $riwayatPeminjaman = Peminjam::where('status', 'Sudah')->paginate(10);
+        $riwayatPeminjaman = Peminjaman::where('status', 'Sudah')->paginate(10);
         return view('admin.riwayatPeminjaman', compact('riwayatPeminjaman'));
     }
 }

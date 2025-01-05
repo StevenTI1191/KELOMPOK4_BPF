@@ -5,11 +5,10 @@ use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\PeminjamController;
-use App\Http\Controllers\PengajuController;
+use App\Http\Controllers\PengajuanController;
 use App\Http\Controllers\PengembaliController;
 use App\Http\Controllers\UserPengajuanBukuController;
 
-use App\Models\Pengaju;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,17 +32,21 @@ Route::post('/admin/register', [AdminAuthController::class, 'register'])->name('
 
 Route::prefix('admin')->group(function () {
     // Utama
-    Route::get('/dashboard', [adminController::class, 'index'])->name('admin.dashboard');
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
     Route::resource('buku', BukuController::class);
-
+    Route::get('/admin/buku', [AdminController::class, 'buku'])->name('admin.buku');
     // List
-    Route::resource('pengaju', PengajuController::class);
-    Route::resource('peminjam', PeminjamController::class);
-    Route::resource('pengembali', PengembaliController::class);
+    Route::patch('/admin/pengajuan/{id}/updateStatus', [AdminController::class, 'updateStatus'])->name('admin.pengajuan.updateStatus');
 
+    Route::resource('pengajuan', PengajuanController::class);
+    Route::get('/admin/pengajuan', [PengajuanController::class, 'index'])->name('admin.pengajuan');
+    Route::resource('peminjaman', PeminjamController::class);
+    Route::get('/admin/peminjaman', [PeminjamController::class, 'index'])->name('admin.peminjaman');
+    Route::resource('pengembalian', PengembaliController::class);
+    Route::get('/admin/pengembalian', [PengembaliController::class, 'index'])->name('admin.pengembalian');
     // Riwayat
-    Route::get('/riwayat-pengajuan', [adminController::class, 'riwayatPengajuan'])->name('admin.riwayatPengajuan');
-    Route::get('/riwayat-peminjaman', [adminController::class, 'riwayatPeminjaman'])->name('admin.riwayatPeminjaman');
+    Route::get('/riwayatpengajuan', [adminController::class, 'riwayatPengajuan'])->name('admin.riwayatPengajuan');
+    Route::get('/riwayatpeminjaman', [adminController::class, 'riwayatPeminjaman'])->name('admin.riwayatPeminjaman');
 });
 
 

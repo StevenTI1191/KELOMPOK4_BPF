@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.NavbarAdmin')
 @section('content')
     <div class="container-fluid">
         <div class="row mb-4">

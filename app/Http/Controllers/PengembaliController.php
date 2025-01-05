@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Peminjam;
+use App\Models\Peminjaman;
 use Illuminate\Http\Request;
 
 class PengembaliController extends Controller
@@ -12,9 +12,10 @@ class PengembaliController extends Controller
      */
     public function index()
     {
-        $data['pengembali'] = \App\Models\Peminjam::latest()->paginate(10);
-        return view('admin.pengembalian', $data);
+        $pengembalian = Peminjaman::latest()->paginate(10);
+        return view('admin.pengembalian', compact('pengembalian'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -53,13 +54,13 @@ class PengembaliController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pengembali = Peminjam::findOrFail($id);
+        $pengembalian = Peminjaman::findOrFail($id);
 
         // Update status dan tanggal pengembalian
         if ($request->has('status') && $request->has('tgl_pengembali')) {
-            $pengembali->status = $request->status;
-            $pengembali->tgl_pengembali = $request->tgl_pengembali;
-            $pengembali->save();
+            $pengembalian->status = $request->status;
+            $pengembalian->tgl_pengembali = $request->tgl_pengembali;
+            $pengembalian->save();
 
             return response()->json(['message' => 'Status dan Tanggal Pengembalian updated successfully']);
         }
@@ -67,7 +68,7 @@ class PengembaliController extends Controller
         // Jika ada field lain yang diupdate, tambahkan logika di sini
         // ...
 
-        return redirect()->route('pengembali.index')->with('success', 'Data updated successfully');
+        return redirect()->route('admin.pengembalian')->with('success', 'Data updated successfully');
     }
 
     /**
