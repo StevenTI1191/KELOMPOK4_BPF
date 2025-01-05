@@ -4,9 +4,11 @@ use App\Http\Controllers\adminController;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\PeminjamController;
 use App\Http\Controllers\PengajuController;
+use App\Http\Controllers\UserPengajuanBukuController;
 use App\Models\Pengaju;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+
 
 Route::get('/', function () {
     return view('index');
@@ -45,4 +47,12 @@ Route::prefix('admin')->group(function () {
     // Riwayat
     Route::get('/riwayat-pengajuan', [adminController::class, 'riwayatPengajuan'])->name('admin.riwayatPengajuan');
     Route::get('/riwayat-peminjaman', [adminController::class, 'riwayatPeminjaman'])->name('admin.riwayatPeminjaman');
+});
+
+Route::middleware('auth')->prefix('user')->name('user.')->group(function () {
+    Route::resource('pengajuanBuku', UserPengajuanBukuController::class);
+    Route::get('/user/pengajuanBuku', [UserPengajuanBukuController::class, 'index'])->name('user.pengajuanBuku');
+
+    Route::post('/pengajuanBuku/store', [UserPengajuanBukuController::class, 'store'])->name('user.pengajuanBuku.store');
+    Route::resource('pengembalian', PengembalianController::class)->except('create');
 });
