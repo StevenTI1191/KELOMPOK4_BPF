@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Buku extends Model
 {
     use HasFactory;
-    protected $guarded=[];
+
+    // Tentukan nama tabel secara eksplisit jika nama tabel berbeda
+    protected $table = 'bukus';  // Pastikan sesuai dengan nama tabel di database
+
+    protected $guarded = [];
 }
+

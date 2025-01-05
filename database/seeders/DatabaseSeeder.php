@@ -1,10 +1,8 @@
 <?php
-
 namespace Database\Seeders;
 
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Buku;  // Jangan lupa untuk import Buku model
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,8 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Seeder untuk model Buku
+        \App\Models\Buku::factory(50)->create(); // Ini akan menghasilkan 50 buku acak di tabel buku
 
+<<<<<<< HEAD
         // User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
@@ -23,5 +23,9 @@ class DatabaseSeeder extends Seeder
         // \App\Models\Buku::factory(50)->create();
         \App\Models\Peminjam::factory(50)->create();
         // \App\Models\Pengaju::factory(50)->create();
+=======
+
+        
+>>>>>>> upstream/main
     }
 }
