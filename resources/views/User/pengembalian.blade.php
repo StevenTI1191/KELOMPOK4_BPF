@@ -19,7 +19,7 @@
                             <th>No</th>
                             <th>Nama Peminjaman</th>
                             <th>Judul Buku</th>
-                            <th>Tanggal Peminjaman</th>
+                            <th>Tanggal Batas Pengembalian</th>
                             <th>Status</th>
                         </tr>
                     </thead>
@@ -29,7 +29,7 @@
                                 <td>{{ $index + 1 }}</td>
                                 <td>{{ $item->nama_peminjaman }}</td>
                                 <td>{{ $item->judul_buku }}</td>
-                                <td>{{ \Carbon\Carbon::parse($item->tgl_peminjaman)->format('d-m-Y') }}</td>
+                                <td>{{ \Carbon\Carbon::parse($item->tgl_batas_pengembalian)->format('d-m-Y') }}</td>
                                 <td>{{ ucfirst($item->status) }}</td>
                             </tr>
                         @endforeach

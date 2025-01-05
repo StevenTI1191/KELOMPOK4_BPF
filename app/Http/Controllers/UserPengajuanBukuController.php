@@ -25,6 +25,17 @@ class UserPengajuanBukuController extends Controller
     return view('user.pengajuanBuku', compact('pengajuan'));
     }
 
+    public function indexRiwayatPengajuan()
+    {
+    // Ambil data pengajuan dengan status 'terima' untuk user yang sedang login
+    $pengajuan = UserPengajuanBuku::where('user_id', Auth::user()->id)
+                                   ->where('status', 'terima')  // Filter status 'terima'
+                                   ->paginate(10);
+
+    // Return view dengan data pengajuan yang sudah difilter
+    return view('user.riwayatPengajuan', compact('pengajuan'));
+    }
+
 
     // Show form to create a new pengajuan
     public function create()

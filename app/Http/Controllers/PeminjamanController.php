@@ -18,7 +18,23 @@ class PeminjamanController extends Controller
     return view('user.peminjaman', compact('peminjaman'));  // Ganti 'your-view-path' dengan nama view yang sesuai
 }
 
+    public function indexPengembalian()
+    {
+        $peminjaman = Peminjaman::where('user_id', Auth::id())->paginate(10); // Ambil data peminjaman milik user yang sedang login
 
+        return view('user.pengembalian', compact('peminjaman'));  // Ganti 'your-view-path' dengan nama view yang sesuai
+    }
+
+    public function indexRiwayatPeminjaman()
+    {
+        // Ambil data peminjaman dengan status 'kembali' milik user yang sedang login
+        $peminjaman = Peminjaman::where('user_id', Auth::id())
+                                ->where('status', 'kembali')
+                                ->paginate(10);
+
+        // Kirim data ke view
+        return view('user.riwayatPeminjaman', compact('peminjaman'));
+    }
     // Menampilkan formulir untuk membuat peminjaman baru
     public function create()
     {
