@@ -1,4 +1,6 @@
-@extends('layouts.app')
+
+
+@extends('layouts.login')
 
 @section('content')
 <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center p-0">

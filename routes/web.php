@@ -24,7 +24,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::get('/admin/buku', [BukuController::class, 'index']);
+Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
 
+// Halaman Register Admin
+Route::get('/admin/register', [AdminAuthController::class, 'showRegistrationForm'])->name('admin.register');
+Route::post('/admin/register', [AdminAuthController::class, 'register'])->name('admin.register.submit');
 
 Route::prefix('admin')->group(function () {
     // Utama
