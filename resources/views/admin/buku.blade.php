@@ -211,6 +211,11 @@
                         </div>
                         <!-- Card Body -->
                         <div class="card-body">
+                            <div class="row mb-3 mt-3">
+                                <div class="col-md-6">
+                                    <a href="/buku/create" class="btn btn-primary btn-sm">Tambah Buku/Modul</a>
+                                </div>
+                            </div>
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
