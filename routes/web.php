@@ -5,12 +5,10 @@ use App\Http\Controllers\BukuController;
 use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\PeminjamController;
 use App\Http\Controllers\PengajuController;
-<<<<<<< HEAD
-use App\Http\Controllers\PengembaliController;
-=======
+
 use App\Http\Controllers\PengembaliController;
 use App\Http\Controllers\UserPengajuanBukuController;
->>>>>>> upstream/main
+
 use App\Models\Pengaju;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;

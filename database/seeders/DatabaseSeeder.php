@@ -1,4 +1,5 @@
 <?php
+
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
@@ -14,7 +15,7 @@ class DatabaseSeeder extends Seeder
         // Seeder untuk model Buku
         \App\Models\Buku::factory(50)->create(); // Ini akan menghasilkan 50 buku acak di tabel buku
 
-<<<<<<< HEAD
+
         // User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
@@ -23,9 +24,5 @@ class DatabaseSeeder extends Seeder
         // \App\Models\Buku::factory(50)->create();
         \App\Models\Peminjam::factory(50)->create();
         // \App\Models\Pengaju::factory(50)->create();
-=======
-
-        
->>>>>>> upstream/main
     }
 }
