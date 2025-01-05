@@ -39,6 +39,7 @@ Route::prefix('admin')->group(function () {
     Route::patch('/admin/pengajuan/{id}/updateStatus', [AdminController::class, 'updateStatus'])->name('admin.pengajuan.updateStatus');
 
     Route::resource('pengajuan', PengajuanController::class);
+    Route::resource('pengajuan', PengajuanController::class);
     Route::get('/admin/pengajuan', [PengajuanController::class, 'index'])->name('admin.pengajuan');
     Route::resource('peminjaman', PeminjamController::class);
     Route::get('/admin/peminjaman', [PeminjamController::class, 'index'])->name('admin.peminjaman');
