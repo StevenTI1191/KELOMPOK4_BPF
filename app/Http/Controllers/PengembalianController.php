@@ -3,91 +3,69 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pengembalian;
+use App\Models\UserPengajuanBuku;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class PengembalianController extends Controller
 {
-    // Constructor to ensure the user is authenticated
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    // Fetch paginated list of pengembalian data
+    // Tampilkan daftar pengembalian untuk user yang sedang login
     public function index()
     {
-        // Use Auth::user() to get the authenticated user
-        $userId = Auth::user()->id;
-
-        // Fetch pengembalian records where user_id matches the logged-in user
-        $pengembalian = Pengembalian::where('user_id', $userId)->paginate(10);
-
-        // Return the view with pengembalian data
-        return view('user.pengembalian.index', compact('pengembalian'));
+        $pengembalian = Pengembalian::where('user_id', Auth::id())->paginate(10);
+        return view('user.pengembalian', compact('pengembalian'));
     }
 
-    // Show the details of a specific pengembalian record
-    public function show($id)
+    // Proses pengembalian otomatis dari pengajuan buku
+    public function store(Request $request)
     {
-        // Use Auth::user() to get the authenticated user
-        $userId = Auth::user()->id;
-
-        // Fetch pengembalian record for the logged-in user
-        $pengembalian = Pengembalian::where('user_id', $userId)->where('id', $id)->firstOrFail();
-
-        // Return the view with the pengembalian details
-        return view('user.pengembalian.show', compact('pengembalian'));
-    }
-
-    // Show the form to edit a specific pengembalian record
-    public function edit($id)
-    {
-        // Use Auth::user() to get the authenticated user
-        $userId = Auth::user()->id;
-
-        // Find the pengembalian record for the logged-in user
-        $pengembalian = Pengembalian::where('user_id', $userId)->where('id', $id)->firstOrFail();
-
-        // Return the edit view
-        return view('user.pengembalian.edit', compact('pengembalian'));
-    }
-
-    // Update the pengembalian record
-    public function update(Request $request, $id)
-    {
-        // Validate the updated input data
-        $validated = $request->validate([
-            'status' => 'required|string|in:sudah,belum', // Only 'sudah' or 'belum'
-            'tgl_pengembalian' => 'nullable|date|required_if:status,sudah', // Ensure 'tgl_pengembalian' is provided if the status is 'sudah'
+        $request->validate([
+            'pengajuan_id' => 'required|exists:pengajuan_buku,id'
         ]);
 
-        // Use Auth::user() to get the authenticated user
-        $userId = Auth::user()->id;
+        $pengajuan = UserPengajuanBuku::findOrFail($request->pengajuan_id);
 
-        // Find the pengembalian record for the logged-in user
-        $pengembalian = Pengembalian::where('user_id', $userId)->where('id', $id)->firstOrFail();
+        Pengembalian::create([
+            'user_id' => Auth::id(),
+            'pengajuan_id' => $pengajuan->id,
+            'nama_pengajuan' => $pengajuan->nama_pengajuan,
+            'judul_buku' => $pengajuan->judul_buku,
+            'identitas' => $pengajuan->identitas,
+            'jenis' => $pengajuan->jenis,
+            'tgl_pengembalian' => now()->addDays(7), // 7 hari setelah pengajuan
+            'status' => 'belum'
+        ]);
 
-        // Update the pengembalian record
-        $pengembalian->update($validated);
-
-        // Redirect to the index route with a success message
-        return redirect()->route('pengembalian.index')->with('success', 'Pengembalian berhasil diperbarui.');
+        return redirect()->route('user.pengembalian')->with('success', 'Pengembalian berhasil diajukan.');
     }
 
-    // Delete the pengembalian record
+    // Update status pengembalian
+    public function update(Request $request, $id)
+    {
+        $pengembalian = Pengembalian::where('user_id', Auth::id())->findOrFail($id);
+
+        $request->validate([
+            'status' => 'required|in:sudah,belum'
+        ]);
+
+        $pengembalian->update([
+            'status' => $request->status
+        ]);
+
+        return redirect()->route('pengembalian.index')->with('success', 'Status pengembalian diperbarui.');
+    }
+
+    // Hapus pengembalian
     public function destroy($id)
     {
-        // Use Auth::user() to get the authenticated user
-        $userId = Auth::user()->id;
-
-        // Find the pengembalian record for the logged-in user
-        $pengembalian = Pengembalian::where('user_id', $userId)->where('id', $id)->firstOrFail();
-
-        // Delete the record
+        $pengembalian = Pengembalian::where('user_id', Auth::id())->findOrFail($id);
         $pengembalian->delete();
 
-        // Redirect to the index route with a success message
         return redirect()->route('pengembalian.index')->with('success', 'Pengembalian berhasil dihapus.');
     }
 }
