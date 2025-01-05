@@ -28,22 +28,20 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin.dashboard') }}">
-            <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
-            </div>
+            
             <div class="sidebar-brand-text mx-3">Admin</div>
         </a>
         <hr class="sidebar-divider my-0">
         <!-- Dashboard Link -->
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('admin.dashboard') }}">
+            <a class="nav-link" href="dashboard">
                 <i class="fas fa-fw fa-home"></i>
                 <span>Dashboard</span>
             </a>
         </li>
         <!-- Buku & Modul Link -->
         <li class="nav-item active">
-            <a class="nav-link" href="{{ route('admin.buku') }}">
+            <a class="nav-link" href="buku">
                 <i class="fas fa-fw fa-book"></i>
                 <span>Buku & Modul</span>
             </a>
@@ -52,19 +50,19 @@
         <!-- List Section -->
         <div class="sidebar-heading">List Buku & Modul</div>
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('admin.pengajuan') }}">
+            <a class="nav-link" href="pengajuan">
                 <i class="fas fa-fw fa-book-reader"></i>
                 <span>Pengajuan</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('admin.peminjaman') }}">
+            <a class="nav-link" href="peminjaman">
                 <i class="fas fa-fw fa-bookmark"></i>
                 <span>Peminjaman</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('admin.pengembalian') }}">
+            <a class="nav-link" href="pengembalian">
                 <i class="fas fa-fw fa-book-open"></i>
                 <span>Pengembalian</span>
             </a>
@@ -73,13 +71,13 @@
         <!-- Riwayat Section -->
         <div class="sidebar-heading">Riwayat Buku & Modul</div>
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('admin.riwayatPengajuan') }}">
+            <a class="nav-link" href="riwayatpengajuan">
                 <i class="fas fa-fw fa-book-reader"></i>
                 <span>Pengajuan</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('admin.riwayatPeminjaman') }}">
+            <a class="nav-link" href="riwayatpeminjaman">
                 <i class="fas fa-fw fa-bookmark"></i>
                 <span>Peminjaman</span>
             </a>

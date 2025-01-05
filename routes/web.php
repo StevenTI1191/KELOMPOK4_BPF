@@ -64,6 +64,6 @@ Route::middleware('auth')->prefix('user')->name('user.')->group(function () {
     Route::get('riwayatPeminjaman', [PeminjamanController::class, 'indexRiwayatPeminjaman'])->name('user.riwayatPeminjaman');
     Route::get('/user/riwayatPeminjaman', [PeminjamanController::class, 'indexRiwayatPeminjaman'])->name('user.riwayatPeminjaman');
 
-    Route::get('riwayatPengajuan', [UserPengajuanBukuController::class, 'indexRiwayatPeminjaman'])->name('user.riwayatPengajuan');
-    Route::get('/user/riwayatPengajuan', [PeminjamanController::class, 'indexRiwayatPeminjaman'])->name('user.riwayatPengajuan');
+    Route::get('riwayatPengajuan', [UserPengajuanBukuController::class, 'indexRiwayatPengajuan'])->name('user.riwayatPengajuan');
+    Route::get('/user/riwayatPengajuan', [PeminjamanController::class, 'indexRiwayatPengajuan'])->name('user.riwayatPengajuan');
 });
