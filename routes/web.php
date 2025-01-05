@@ -5,7 +5,6 @@ use App\Http\Controllers\BukuController;
 use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\PeminjamController;
 use App\Http\Controllers\PengajuController;
-
 use App\Http\Controllers\PengembaliController;
 use App\Http\Controllers\UserPengajuanBukuController;
 
@@ -17,36 +16,37 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('index');
 });
-Route::resource('buku', BukuController::class);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/admin/buku', [BukuController::class, 'index']);
 
+// Admin
 Route::prefix('admin')->group(function () {
+    // Utama
     Route::get('/dashboard', [adminController::class, 'index'])->name('admin.dashboard');
-    Route::get('/buku', [BukuController::class, 'index'])->name('admin.buku');
+    Route::resource('buku', BukuController::class);
 
     // List
-    Route::get('/pengajuan', [PengajuController::class, 'index'])->name('admin.pengajuan');
+    Route::resource('pengaju', PengajuController::class);
     Route::resource('peminjam', PeminjamController::class);
     Route::resource('pengembali', PengembaliController::class);
-
 
     // Riwayat
     Route::get('/riwayat-pengajuan', [adminController::class, 'riwayatPengajuan'])->name('admin.riwayatPengajuan');
     Route::get('/riwayat-peminjaman', [adminController::class, 'riwayatPeminjaman'])->name('admin.riwayatPeminjaman');
 });
 
+
+// User
 Route::middleware('auth')->prefix('user')->name('user.')->group(function () {
     Route::resource('pengajuanBuku', UserPengajuanBukuController::class);
     Route::get('/user/pengajuanBuku', [UserPengajuanBukuController::class, 'index'])->name('user.pengajuanBuku');
     Route::get('pengembalian', [PeminjamanController::class, 'indexPengembalian'])->name('user.pengembalian');
     Route::get('/user/pengembalian', [PeminjamanController::class, 'indexPengembalian'])->name('user.pengembalian');
     Route::resource('peminjaman', PeminjamanController::class);
-    
+
     Route::get('/user/peminjaman', [PeminjamanController::class, 'index'])->name('user.peminjaman');
     Route::get('/peminjaman', [PeminjamanController::class, 'index'])->name('user.peminjaman.index');
 

@@ -39,14 +39,14 @@
                     <span>Dashboard</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.buku') }}">
+                <a class="nav-link" href="{{ route('buku.index') }}">
                     <i class="fas fa-fw fa-book"></i>
                     <span>Buku & Modul</span></a>
             </li>
             <hr class="sidebar-divider d-none d-md-block">
             <div class="sidebar-heading">List Buku & Modul</div>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.pengajuan') }}">
+                <a class="nav-link" href="{{ route('pengaju.index') }}">
                     <i class="fas fa-fw fa-book-reader"></i>
                     <span>Pengajuan</span></a>
             </li>
