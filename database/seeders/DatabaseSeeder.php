@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         // \App\Models\Buku::factory(50)->create();
-        // \App\Models\Peminjam::factory(50)->create();
-        \App\Models\Pengaju::factory(50)->create();
+        \App\Models\Peminjam::factory(50)->create();
+        // \App\Models\Pengaju::factory(50)->create();
     }
 }

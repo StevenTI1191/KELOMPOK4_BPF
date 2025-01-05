@@ -16,12 +16,15 @@ class PeminjamFactory extends Factory
      */
     public function definition(): array
     {
+        $tglPinjam = fake()->dateTimeThisYear();
         return [
             'nama_peminjam' => fake()->name(),
-            'nim' => fake()->numberBetween(112, 255),
-            'tgl_pinjam' => fake()->dateTimeThisYear(),
+            'nim' => (string) fake()->numberBetween(1000000000, 9999999999),
+            'tgl_pinjam' => $tglPinjam, // Tetap format timestamp
+            'tgl_pengembali' => null, // Selalu null
             'jenis' => fake()->randomElement(['Buku', 'Modul']),
-            'judul_buku' => fake()->name(),
+            'judul_buku' => fake()->sentence(3),
+            'status' => 'Belum', // Selalu "Belum"
         ];
     }
 }

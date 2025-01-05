@@ -4,6 +4,7 @@ use App\Http\Controllers\adminController;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\PeminjamController;
 use App\Http\Controllers\PengajuController;
+use App\Http\Controllers\PengembaliController;
 use App\Models\Pengaju;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -11,27 +12,13 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('index');
 });
-Route::resource('peminjam', PeminjamController::class);
 Route::resource('buku', BukuController::class);
-
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-// Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-// Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
 Route::get('/admin/buku', [BukuController::class, 'index']);
-
 
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard', [adminController::class, 'index'])->name('admin.dashboard');
@@ -39,8 +26,9 @@ Route::prefix('admin')->group(function () {
 
     // List
     Route::get('/pengajuan', [PengajuController::class, 'index'])->name('admin.pengajuan');
-    Route::get('/peminjaman', [PeminjamController::class, 'index'])->name('admin.peminjaman');
-    Route::get('/pengembalian', [adminController::class, 'pengembalian'])->name('admin.pengembalian');
+    Route::resource('peminjam', PeminjamController::class);
+    Route::resource('pengembali', PengembaliController::class);
+
 
     // Riwayat
     Route::get('/riwayat-pengajuan', [adminController::class, 'riwayatPengajuan'])->name('admin.riwayatPengajuan');
