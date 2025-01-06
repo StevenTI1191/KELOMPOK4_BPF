@@ -18,32 +18,36 @@ class PengajuanController extends Controller
     // Menampilkan form untuk membuat pengajuan baru
     public function create()
     {
-        return view('admin.pengajuanCreate');
+        return view('admin.tambahPengajuanBuku');
     }
 
     // Menyimpan pengajuan baru ke database
     public function store(Request $request)
-    {
-        $request->validate([
-            'nama_pengajuan' => 'required|string|max:255',
-            'identitas' => 'required|numeric',
-            'tgl_pengajuan' => 'required|date',
-            'jenis' => 'required|string|max:100',
-            'judul_buku' => 'required|string|max:255',
-        ]);
+{
+    // Validasi input dari pengguna
+    $request->validate([
+        'nama_pengajuan' => 'required|string|max:255',
+        'identitas' => 'required|numeric',
+        'tgl_pengajuan' => 'required|date',
+        'jenis' => 'required|string|max:100',
+        'judul_buku' => 'required|string|max:255',
+    ]);
 
-        UserPengajuanBuku::create([
-            'user_id' => Auth::id(),
-            'nama_pengajuan' => $request->nama_pengajuan,
-            'identitas' => $request->identitas,
-            'tgl_pengajuan' => $request->tgl_pengajuan,
-            'jenis' => $request->jenis,
-            'judul_buku' => $request->judul_buku,
-            'status' => 'pending', // default status
-        ]);
+    // Simpan data ke tabel pengajuan_buku
+    UserPengajuanBuku::create([
+        'user_id' => Auth::id(), // Menghubungkan pengajuan dengan user yang sedang login
+        'nama_pengajuan' => $request->nama_pengajuan,
+        'identitas' => $request->identitas,
+        'tgl_pengajuan' => $request->tgl_pengajuan,
+        'jenis' => $request->jenis,
+        'judul_buku' => $request->judul_buku,
+        // Status tidak perlu diset karena default di database adalah 'tolak'
+    ]);
 
-        return redirect()->route('admin.pengajuan')->with('success', 'Pengajuan berhasil ditambahkan.');
-    }
+    // Redirect ke halaman daftar pengajuan dengan pesan sukses
+    return redirect()->route('admin.pengajuan')->with('success', 'Pengajuan berhasil ditambahkan.');
+}
+
 
     // Menampilkan detail pengajuan
     public function show($id)

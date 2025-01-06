@@ -22,6 +22,8 @@
                                 <th>Judul Buku</th>
                                 <th>Tanggal Peminjaman</th>
                                 <th>Tanggal Pengembalian</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -32,7 +34,22 @@
                                     <td>{{ $item['nim'] }}</td>
                                     <td>{{ $item['judul_buku'] }}</td>
                                     <td>{{ $item['tgl_pinjam'] }}</td>
-                                    <td>{{ $item['tgl_pengembali'] }}</td>
+                                    <td>{{ $item['tgl_pengembali'] ?? '-' }}</td>
+                                    <td>
+                                        <span class="badge {{ $item['status'] === 'Sudah' ? 'badge-success' : 'badge-danger' }}">
+                                            {{ $item['status'] }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <form action="{{ route('peminjaman.updateStatus', $item['id']) }}" method="POST" class="d-inline">
+                                            @csrf
+                                            @method('PATCH')
+                                            <select name="status" class="form-control form-control-sm" onchange="this.form.submit()">
+                                                <option value="Belum" {{ $item['status'] === 'Belum' ? 'selected' : '' }}>Belum</option>
+                                                <option value="Sudah" {{ $item['status'] === 'Sudah' ? 'selected' : '' }}>Sudah</option>
+                                            </select>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

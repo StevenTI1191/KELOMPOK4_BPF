@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Peminjaman;
+use App\Models\Peminjam;
 use Illuminate\Http\Request;
 
 class PeminjamController extends Controller
@@ -12,7 +12,7 @@ class PeminjamController extends Controller
      */
     public function index()
     {
-        $peminjam = Peminjaman::paginate(10);
+        $peminjam = Peminjam::paginate(10);
         return view('admin.peminjaman', compact('peminjam'));
     }
 
@@ -39,7 +39,7 @@ class PeminjamController extends Controller
         ]);
 
         // Simpan data ke database
-        Peminjaman::create([
+        Peminjam::create([
             'nama_peminjam' => $validated['nama_peminjam'],
             'nim' => $validated['nim'],
             'tgl_pinjam' => $validated['tgl_pinjam'] ?? null, // Biarkan null jika tidak diisi
@@ -59,7 +59,7 @@ class PeminjamController extends Controller
     public function show($id)
     {
         try {
-            $peminjam = Peminjaman::findOrFail($id);
+            $peminjam = Peminjam::findOrFail($id);
             return response()->json($peminjam);
         } catch (\Exception $e) {
             return response()->json(['error' => 'Data tidak ditemukan'], 404);
@@ -71,14 +71,14 @@ class PeminjamController extends Controller
      */
     public function edit(string $id)
     {
-        $peminjam = Peminjaman::findOrFail($id);
+        $peminjam = Peminjam::findOrFail($id);
         return view('admin.peminjaman.update', compact('peminjam'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Peminjaman $peminjam)
+    public function update(Request $request, Peminjam $peminjam)
     {
         // Validasi data yang diterima dari form
         $validatedData = $request->validate([
@@ -106,8 +106,16 @@ class PeminjamController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Peminjaman $peminjam)
+    public function destroy(Peminjam $peminjam)
     {
         //
     }
+    public function updateStatus(Request $request, $id)
+    {
+        $peminjam = Peminjam::findOrFail($id);
+        $peminjam->update(['status' => $request->status]);
+
+        return redirect()->route('peminjaman.index')->with('success', 'Status berhasil diperbarui.');
+    }
+
 }

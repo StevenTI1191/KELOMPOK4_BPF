@@ -37,11 +37,13 @@ Route::prefix('admin')->group(function () {
     Route::get('/admin/buku', [AdminController::class, 'buku'])->name('admin.buku');
     // List
     Route::patch('/admin/pengajuan/{id}/updateStatus', [AdminController::class, 'updateStatus'])->name('admin.pengajuan.updateStatus');
+    Route::patch('/peminjaman/{id}/update-status', [PeminjamController::class, 'updateStatus'])->name('peminjaman.updateStatus');
 
     Route::resource('pengajuan', PengajuanController::class);
     Route::resource('pengajuan', PengajuanController::class);
     Route::get('/admin/pengajuan', [PengajuanController::class, 'index'])->name('admin.pengajuan');
     Route::resource('peminjaman', PeminjamController::class);
+    Route::resource('peminjam', PeminjamController::class);
     Route::get('/admin/peminjaman', [PeminjamController::class, 'index'])->name('admin.peminjaman');
     Route::resource('pengembalian', PengembaliController::class);
     Route::get('/admin/pengembalian', [PengembaliController::class, 'index'])->name('admin.pengembalian');

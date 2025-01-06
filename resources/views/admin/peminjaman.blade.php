@@ -27,6 +27,7 @@
                                 <th>Tanggal Peminjaman</th>
                                 <th>Jenis</th>
                                 <th>Judul Buku</th>
+                                <th>Status</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -40,9 +41,19 @@
                                     <td>{{ $item['jenis'] }}</td>
                                     <td>{{ $item['judul_buku'] }}</td>
                                     <td>
-                                        <a href="{{ route('peminjaman.edit', $item['id']) }}" class="btn btn-warning btn-sm">
-                                            <i class="fas fa-edit"></i> Update
-                                        </a>
+                                        <span class="badge {{ $item['status'] === 'Sudah' ? 'badge-success' : 'badge-danger' }}">
+                                            {{ $item['status'] }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <form action="{{ route('peminjaman.updateStatus', $item['id']) }}" method="POST" class="d-inline">
+                                            @csrf
+                                            @method('PATCH')
+                                            <select name="status" class="form-control form-control-sm" onchange="this.form.submit()">
+                                                <option value="Belum" {{ $item['status'] === 'Belum' ? 'selected' : '' }}>Belum</option>
+                                                <option value="Sudah" {{ $item['status'] === 'Sudah' ? 'selected' : '' }}>Sudah</option>
+                                            </select>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach
