@@ -1,9 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
@@ -15,13 +14,11 @@ return new class extends Migration
         Schema::create('peminjams', function (Blueprint $table) {
             $table->id();
             $table->string('nama_peminjam');
-            $table->string('nim');
-            $table->timestamp('tgl_pinjam')->default(DB::raw('CURRENT_TIMESTAMP')); // Ganti date dengan timestamp
-            $table->timestamp('tgl_pengembali')->nullable(); // Bisa nullable
+            $table->integer('nim');
+            $table->date('tgl_pinjam');
             $table->string('jenis');
             $table->string('judul_buku');
-            $table->string('status')->default('Belum');
-            $table->timestamps(); // created_at dan updated_at
+            $table->timestamps();
         });
     }
 

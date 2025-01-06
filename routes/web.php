@@ -3,6 +3,7 @@
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\UserBukuController;
 use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\PeminjamController;
 use App\Http\Controllers\PengajuanController;
@@ -60,7 +61,7 @@ Route::middleware('auth')->prefix('user')->name('user.')->group(function () {
     Route::get('pengembalian', [PeminjamanController::class, 'indexPengembalian'])->name('user.pengembalian');
     Route::get('/user/pengembalian', [PeminjamanController::class, 'indexPengembalian'])->name('user.pengembalian');
     Route::resource('peminjaman', PeminjamanController::class);
-
+    Route::resource('buku', UserBukuController::class);
     Route::get('/user/peminjaman', [PeminjamanController::class, 'index'])->name('user.peminjaman');
     Route::get('/peminjaman', [PeminjamanController::class, 'index'])->name('user.peminjaman.index');
 
