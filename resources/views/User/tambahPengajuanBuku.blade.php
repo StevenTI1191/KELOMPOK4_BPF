@@ -62,6 +62,40 @@
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
+                        <!-- Referensi -->
+                        <div class="form-group">
+                            <label for="referensi">Referensi</label>
+                            <input type="text" class="form-control @error('referensi') is-invalid @enderror" 
+                                   id="referensi" name="referensi" value="{{ old('referensi') }}" required>
+                            @error('referensi')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <!-- Pengarang -->
+                        <div class="form-group">
+                            <label for="pengarang">Pengarang</label>
+                            <input type="text" class="form-control @error('pengarang') is-invalid @enderror" 
+                                   id="pengarang" name="pengarang" value="{{ old('pengarang') }}" required>
+                            @error('pengarang')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="penerbit">Penerbit</label>
+                            <input type="text" class="form-control @error('penerbit') is-invalid @enderror" 
+                                   id="penerbit" name="penerbit" value="{{ old('penerbit') }}" required>
+                            @error('penerbit')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="link_beli">Link Beli</label>
+                            <input type="text" class="form-control @error('judul_buku') is-invalid @enderror" 
+                                   id="link_beli" name="link_beli" value="{{ old('link_beli') }}" required>
+                            @error('link_beli')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
 
                         <button type="submit" class="btn btn-primary">Ajukan</button>
                     </form>

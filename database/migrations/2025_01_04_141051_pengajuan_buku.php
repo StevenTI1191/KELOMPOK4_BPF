@@ -19,6 +19,10 @@ return new class extends Migration
             $table->date('tgl_pengajuan');
             $table->string('jenis');
             $table->string('judul_buku');
+            $table->string('referensi');
+            $table->string('pengarang');
+            $table->string('penerbit');
+            $table->string('link_beli');
             $table->timestamps();
         });
     }

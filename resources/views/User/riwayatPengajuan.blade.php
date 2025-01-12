@@ -21,6 +21,10 @@
                                 <th>Tanggal Pengajuan</th>
                                 <th>Jenis</th>
                                 <th>Judul Buku</th>
+                                <th>Referensi</th>
+                                <th>Pengarang</th>
+                                <th>Penerbit</th>
+                                <th>Link Beli</th>
                                 <th>Status</th>  <!-- Kolom Status Ditambahkan -->
                             </tr>
                         </thead>
@@ -33,6 +37,10 @@
                                     <td>{{ \Carbon\Carbon::parse($item->tgl_pengajuan)->format('d-m-Y') }}</td>
                                     <td>{{ $item->jenis }}</td>
                                     <td>{{ $item->judul_buku }}</td>
+                                    <td>{{ $item->referensi }}</td>
+                                    <td>{{ $item->pengarang }}</td>
+                                    <td>{{ $item->penerbit }}</td>
+                                    <td>{{ $item->link_beli }}</td>
                                     <td>
                                         @if ($item->status == 'terima')
                                             <span class="badge badge-success">Diterima</span>

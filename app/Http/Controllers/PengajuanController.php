@@ -31,6 +31,10 @@ class PengajuanController extends Controller
         'tgl_pengajuan' => 'required|date',
         'jenis' => 'required|string|max:100',
         'judul_buku' => 'required|string|max:255',
+        'referensi' => 'required|string|max:255',
+        'pengarang' => 'required|string|max:255',
+        'penerbit' => 'required|string|max:255',
+        'link_beli' => 'required|string|max:255',
     ]);
 
     // Simpan data ke tabel pengajuan_buku
@@ -41,6 +45,10 @@ class PengajuanController extends Controller
         'tgl_pengajuan' => $request->tgl_pengajuan,
         'jenis' => $request->jenis,
         'judul_buku' => $request->judul_buku,
+        'referensi' => $request->referensi,
+        'pengarang' => $request->pengarang,
+        'penerbit' => $request->penerbit,
+        'link_beli' => $request->link_beli,
         // Status tidak perlu diset karena default di database adalah 'tolak'
     ]);
 
@@ -73,6 +81,10 @@ class PengajuanController extends Controller
             'jenis' => 'required|string|max:100',
             'judul_buku' => 'required|string|max:255',
             'status' => 'required|string',
+            'referensi' => 'required|string|max:255',
+            'pengarang' => 'required|string|max:255',
+            'penerbit' => 'required|string|max:255',
+            'link_beli' => 'required|string|max:255',
         ]);
 
         $pengajuan = UserPengajuanBuku::findOrFail($id);

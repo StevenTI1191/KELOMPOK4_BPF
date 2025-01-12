@@ -27,14 +27,15 @@ class UserPengajuanBukuController extends Controller
 
     public function indexRiwayatPengajuan()
     {
-    // Ambil data pengajuan dengan status 'terima' untuk user yang sedang login
-    $pengajuan = UserPengajuanBuku::where('user_id', Auth::user()->id)
-                                   ->where('status', 'terima')  // Filter status 'terima'
-                                   ->paginate(10);
+        // Ambil data pengajuan dengan status 'terima' untuk user yang sedang login
+        $pengajuan = UserPengajuanBuku::where('user_id', Auth::user()->id)
+                                      ->where('status', 'terima')  // Filter status 'terima'
+                                      ->paginate(10);
 
-    // Return view dengan data pengajuan yang sudah difilter
-    return view('user.riwayatPengajuan', compact('pengajuan'));
+        // Return view dengan data pengajuan yang sudah difilter
+        return view('user.riwayatPengajuan', compact('pengajuan'));
     }
+
 
 
     // Show form to create a new pengajuan
@@ -54,6 +55,11 @@ class UserPengajuanBukuController extends Controller
             'tgl_pengajuan' => 'required|date',
             'jenis' => 'required|string|max:255',
             'judul_buku' => 'required|string|max:255',
+            'referensi' => 'required|string|max:255',
+            'pengarang' => 'required|string|max:255',
+            'penerbit' => 'required|string|max:255',
+            'link_beli' => 'required|string|max:255',
+
         ]);
 
         // Add user_id to the validated data
@@ -103,6 +109,11 @@ class UserPengajuanBukuController extends Controller
             'tgl_pengajuan' => 'required|date',
             'jenis' => 'required|string|max:255',
             'judul_buku' => 'required|string|max:255',
+            'referensi' => 'required|string|max:255',
+            'pengarang' => 'required|string|max:255',
+            'penerbit' => 'required|string|max:255',
+            'link_beli' => 'required|string|max:255',
+
         ]);
 
         // Fetch the pengajuan record for the logged-in user and the specified ID
