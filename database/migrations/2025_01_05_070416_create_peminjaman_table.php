@@ -22,6 +22,7 @@ return new class extends Migration
             $table->enum('status', ['dipinjam', 'kembali'])->default('dipinjam'); // Status peminjaman
             $table->timestamps();
         });
+        
     }
 
     /**

@@ -7,9 +7,6 @@
         <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">List Pengajuan Buku & Modul</h6>
-                <a href="{{ route('pengajuan.create') }}" class="btn btn-primary">
-                    <i class="fa fa-plus-circle"></i> Ajukan
-                </a>
             </div>
 
             <div class="card-body">
@@ -23,6 +20,10 @@
                                 <th>Tanggal Pengajuan</th>
                                 <th>Jenis</th>
                                 <th>Judul Buku</th>
+                                <th>Referensi</th>
+                                <th>Pengarang</th>
+                                <th>Penerbit</th>
+                                <th>Link Beli</th>
                                 <th>Status</th> 
                                 <th>Aksi</th>  <!-- Kolom Aksi Ditambahkan -->
                             </tr>
@@ -36,6 +37,10 @@
                                     <td>{{ \Carbon\Carbon::parse($item->tgl_pengajuan)->format('d-m-Y') }}</td>
                                     <td>{{ $item->jenis }}</td>
                                     <td>{{ $item->judul_buku }}</td>
+                                    <td>{{ $item->referensi }}</td>
+                                    <td>{{ $item->pengarang }}</td>
+                                    <td>{{ $item->penerbit }}</td>
+                                    <td>{{ $item->link_beli }}</td>
                                     <td>
                                         @if ($item->status == 'terima')
                                             <span class="badge badge-success">Diterima</span>

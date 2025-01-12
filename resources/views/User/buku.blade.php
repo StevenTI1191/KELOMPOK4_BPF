@@ -31,7 +31,13 @@
                                 <tr>
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $item['judul_buku'] }}</td>
-                                    <td>{{ $item['Status'] }}</td>
+                                    <td>
+                                        @if ($item->status == 'terima')
+                                            <span class="badge badge-danger">Kosong</span>
+                                        @else
+                                            <span class="badge badge-success">Tersedia</span>
+                                        @endif
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
