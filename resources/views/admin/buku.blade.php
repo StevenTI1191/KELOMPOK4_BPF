@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.NavbarAdmin')
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -18,7 +18,7 @@
             <div class="card-body">
                 <div class="row mb-3 mt-3">
                     <div class="col-md-6">
-                        <a href="/buku/create" class="btn btn-primary btn-sm">Tambah Buku/Modul</a>
+                        <a href="/admin/buku/create" class="btn btn-primary btn-sm">Tambah Buku/Modul</a>
                     </div>
                 </div>
                 <div class="table-responsive">
@@ -27,7 +27,6 @@
                             <tr>
                                 <th>No</th>
                                 <th>Judul Buku/Modul</th>
-                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -35,7 +34,6 @@
                                 <tr>
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $item['judul_buku'] }}</td>
-                                    <td>{{ $item['Status'] }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

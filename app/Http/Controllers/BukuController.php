@@ -1,7 +1,7 @@
 <?php
-
 namespace App\Http\Controllers;
 
+use App\Models\Buku;
 use Illuminate\Http\Request;
 
 class BukuController extends Controller
@@ -11,7 +11,7 @@ class BukuController extends Controller
      */
     public function index()
     {
-        $data['buku'] = \App\Models\Buku::latest()->paginate(10);
+        $data['buku'] = Buku::latest()->paginate(10);
         return view('admin.buku', $data);
     }
 
@@ -28,45 +28,12 @@ class BukuController extends Controller
      */
     public function store(Request $request)
     {
-        $requestData = $request->validate([
+        $request->validate([
             'judul_buku' => 'required|min:3',
-            'status' => 'required|in:tersedia,kosong',
+            'status' => 'required|in:Tersedia,Kosong',
         ]);
-        $buku = new \App\Models\Buku(); //membuat objek kosong di variabel model
-        $buku->fill($requestData); //mengisi var model dengan data yang sudah divalidasi requestData
-        $buku->save();
-        return back();
-    }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        Buku::create($request->all());
+        return redirect()->route('admin.buku.index')->with('success', 'Buku berhasil ditambahkan.');
     }
 }

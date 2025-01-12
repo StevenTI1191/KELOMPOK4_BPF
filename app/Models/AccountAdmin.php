@@ -12,10 +12,13 @@ class AccountAdmin extends Authenticatable
     protected $table = 'AccountAdmin';  // Pastikan model ini merujuk ke tabel AccountAdmin
 
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password',
     ];
 
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 }

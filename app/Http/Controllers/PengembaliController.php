@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Peminjaman;
+use App\Models\Peminjam;
 use Illuminate\Http\Request;
 
 class PengembaliController extends Controller
@@ -12,7 +12,7 @@ class PengembaliController extends Controller
      */
     public function index()
     {
-        $pengembalian = Peminjaman::latest()->paginate(10);
+        $pengembalian = Peminjam::latest()->paginate(10);
         return view('admin.pengembalian', compact('pengembalian'));
     }
 
@@ -54,7 +54,7 @@ class PengembaliController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pengembalian = Peminjaman::findOrFail($id);
+        $pengembalian = Peminjam::findOrFail($id);
 
         // Update status dan tanggal pengembalian
         if ($request->has('status') && $request->has('tgl_pengembali')) {

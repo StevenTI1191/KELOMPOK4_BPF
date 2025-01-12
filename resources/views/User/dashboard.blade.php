@@ -49,7 +49,7 @@
 
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.buku')}}">
+                <a class="nav-link" href="buku">
                     <i class="fas fa-fw fa-book"></i>
                     <span>Buku & Modul</span></a>
             </li>

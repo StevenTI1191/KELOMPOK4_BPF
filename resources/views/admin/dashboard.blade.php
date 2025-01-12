@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.NavbarAdmin')
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">

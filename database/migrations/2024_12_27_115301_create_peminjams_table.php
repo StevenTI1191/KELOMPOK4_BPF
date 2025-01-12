@@ -13,12 +13,14 @@ return new class extends Migration
     {
         Schema::create('peminjams', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_peminjam');
-            $table->integer('nim');
-            $table->date('tgl_pinjam');
-            $table->string('jenis');
-            $table->string('judul_buku');
-            $table->timestamps();
+            $table->string('nama_peminjam'); // Nama peminjam
+            $table->integer('nim'); // NIM peminjam
+            $table->date('tgl_pinjam')->nullable(); // Tanggal pinjam, bisa null
+            $table->date('tgl_pengembali')->nullable(); // Tanggal pengembali, null saat peminjaman dibuat
+            $table->string('jenis'); // Jenis buku atau kategori
+            $table->string('judul_buku'); // Judul buku yang dipinjam
+            $table->string('status')->default('Belum'); // Status peminjaman, default "Belum"
+            $table->timestamps(); // Kolom created_at dan updated_at
         });
     }
 

@@ -15,6 +15,11 @@ class UserBukuController extends Controller
         return view('user.buku', $data);
     }
 
+    public function indexDashboard()
+    {
+        return view('user.dashboard');
+    }
+
     /**
      * Show the form for creating a new resource.
      */

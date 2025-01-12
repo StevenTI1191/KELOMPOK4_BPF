@@ -24,8 +24,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::get('/admin/buku', [BukuController::class, 'index']);
-Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
-Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
+// web.php
+
+Route::get('/admin/register', [AdminAuthController::class, 'showRegisterForm'])->name('admin.register');
+Route::post('/admin/register', [AdminAuthController::class, 'register'])->name('admin.register.submit');
+
+
+
 
 // Halaman Register Admin
 Route::get('/admin/register', [AdminAuthController::class, 'showRegistrationForm'])->name('admin.register');
@@ -35,8 +40,20 @@ Route::prefix('admin')->group(function () {
     // Utama
     Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
     Route::resource('buku', BukuController::class);
-    Route::get('/admin/buku', [AdminController::class, 'buku'])->name('admin.buku');
+    Route::get('/admin/buku', [AdminController::class, 'create'])->name('admin.buku');
+    Route::get('buku/create', [BukuController::class, 'create'])->name('admin.buku');
+    Route::get('/admin/buku/create', [BukuController::class, 'create'])->name('admin.buku_create');
     // List
+
+    Route::get('/admin/buku', [BukuController::class, 'index'])->name('admin.buku.index');
+
+// Rute untuk form tambah buku
+Route::get('/admin/buku/create', [BukuController::class, 'create'])->name('admin.buku.create');
+
+// Rute untuk menyimpan data buku
+Route::post('/admin/buku', [BukuController::class, 'store'])->name('admin.buku.store');
+
+
     Route::patch('/admin/pengajuan/{id}/updateStatus', [AdminController::class, 'updateStatus'])->name('admin.pengajuan.updateStatus');
     Route::patch('/peminjaman/{id}/update-status', [PeminjamController::class, 'updateStatus'])->name('peminjaman.updateStatus');
 
@@ -62,6 +79,8 @@ Route::middleware('auth')->prefix('user')->name('user.')->group(function () {
     Route::get('/user/pengembalian', [PeminjamanController::class, 'indexPengembalian'])->name('user.pengembalian');
     Route::resource('peminjaman', PeminjamanController::class);
     Route::resource('buku', UserBukuController::class);
+    Route::get('/dashboard', [UserBukuController::class, 'indexDashboard'])->name('user.dashboard');
+
     Route::get('/user/peminjaman', [PeminjamanController::class, 'index'])->name('user.peminjaman');
     Route::get('/peminjaman', [PeminjamanController::class, 'index'])->name('user.peminjaman.index');
 
